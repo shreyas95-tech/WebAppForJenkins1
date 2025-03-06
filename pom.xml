@@ -7,6 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MyWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -16,14 +17,24 @@
     </dependency>
     
     <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>servlet-api</artifactId>
-    <version>2.5</version>
-    <scope>provided</scope>
-    
-</dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
+  
   <build>
     <finalName>MyWebApp</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version> <!-- Updated to a newer version -->
+        <configuration>
+          <!-- Optional: configure war plugin if necessary -->
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
