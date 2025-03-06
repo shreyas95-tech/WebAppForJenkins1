@@ -7,8 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MyWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
+
   <dependencies>
+    <!-- JUnit dependency for unit testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -16,17 +17,50 @@
       <scope>test</scope>
     </dependency>
     
+    <!-- Servlet API dependency (provided scope as it is provided by the server) -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+
+    <!-- Adding Spring dependencies (Core and Web) -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.3.20</version> <!-- Updated to latest Spring version -->
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.3.20</version> <!-- Updated to latest Spring version -->
+    </dependency>
+
+    <!-- Adding Apache Commons Lang for utility functions -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version> <!-- Updated to the latest version -->
+    </dependency>
+    
+    <!-- Log4j dependency for logging -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.14.1</version> <!-- Updated to the latest stable version -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.14.1</version> <!-- Updated to the latest stable version -->
+    </dependency>
   </dependencies>
   
   <build>
     <finalName>MyWebApp</finalName>
     <plugins>
+      <!-- Maven WAR Plugin (Updated version) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
@@ -34,6 +68,31 @@
         <configuration>
           <!-- Optional: configure war plugin if necessary -->
         </configuration>
+      </plugin>
+
+      <!-- Maven Compiler Plugin to specify Java version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version> <!-- Updated version -->
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      
+      <!-- Maven Surefire Plugin for running unit tests -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version> <!-- Latest stable version -->
+      </plugin>
+      
+      <!-- Maven Clean Plugin to clean up the build -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version> <!-- Latest stable version -->
       </plugin>
     </plugins>
   </build>
