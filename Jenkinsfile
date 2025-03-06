@@ -2,7 +2,7 @@ pipeline {
     agent any  // Runs on any available agent (node)
     
     environment {
-        MAVEN_HOME = tool name: 'M3', type: 'ToolLocation'  // Use Maven tool installed on Jenkins
+        MAVEN_HOME = tool name: 'Maven 3.6.3', type: 'ToolLocation'  // Use the correct Maven installation name
         PATH = "${MAVEN_HOME}/bin:${env.PATH}"  // Add Maven to the PATH
     }
 
