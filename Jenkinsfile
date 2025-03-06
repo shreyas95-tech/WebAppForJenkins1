@@ -2,7 +2,7 @@ pipeline {
     agent any  // Runs on any available agent (node)
     
     environment {
-        MAVEN_HOME = tool name: 'maven-3.6.3', type: 'ToolLocation'  // Use the correct Maven installation name
+        MAVEN_HOME = tool name: '3.6.3', type: 'ToolLocation'  // Use the correct Maven installation name
         PATH = "${MAVEN_HOME}/bin:${env.PATH}"  // Add Maven to the PATH
     }
 
